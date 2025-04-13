@@ -1,32 +1,41 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"maps"
+)
 
 func main() {
 
-	i := 1
-	for i <= 3 {
-		fmt.Println(i)
-		i = i + 1
-	}
+	m := make(map[string]int)
 
-	for j := 0; j < 3; j++ {
-		fmt.Println(j)
-	}
+	m["k1"] = 7
+	m["k2"] = 13
 
-	for i := range 3 {
-		fmt.Println("range", i)
-	}
+	fmt.Println("map:", m)
 
-	for {
-		fmt.Println("loop")
-		break
-	}
+	v1 := m["k1"]
+	fmt.Println("v1:", v1)
 
-	for n := range 6 {
-		if n%2 == 0 {
-			continue
-		}
-		fmt.Println(n)
+	v3 := m["k3"]
+	fmt.Println("v3:", v3)
+
+	fmt.Println("len:", len(m))
+
+	delete(m, "k2")
+	fmt.Println("map:", m)
+
+	clear(m)
+	fmt.Println("map:", m)
+
+	_, prs := m["k2"]
+	fmt.Println("prs:", prs)
+
+	n := map[string]int{"foo": 1, "bar": 2}
+	fmt.Println("map:", n)
+
+	n2 := map[string]int{"foo": 1, "bar": 2}
+	if maps.Equal(n, n2) {
+		fmt.Println("n == n2")
 	}
 }
