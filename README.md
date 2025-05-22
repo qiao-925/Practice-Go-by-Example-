@@ -29,12 +29,13 @@ Channels
 Channel Buffering
 Channel Synchronization
 Channel Directions
-// todo
 Select
 Timeouts
 Non-Blocking Channel Operations
 Closing Channels
 Range over Channels
+
+====》
 Timers
 Tickers
 Worker Pools
